@@ -1,0 +1,22 @@
+datasets_dirname: datasets  # directory to put datasets
+pretrained_models_dirname: pretrained_models  # directory to put Pytorch pretrained models
+samples_dirname: samples  # directory to save sampled image names
+samples_filename: samples_selected.txt  # file to save sampled image names
+pairs_dirname: pairs  # directory to save (i,j) pairs and contexts S
+pairs_filename: pairs.npy  # file to save (i,j) pairs
+players_dirname: players  # directory to save contexts S，w.r.t pairs_dirname
+interactions_logit_dirname: interactions_logit  # directory to save logits
+interactions_dirname: interactions  # directory to save interactions
+figures_dirname: figures  # directory to save figures
+
+########## Please change this directory accordingly #########
+prefix: ./  # path of the project root, prefer absolute path
+
+ratios: [0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 1.0]
+
+pairs_number_pixel: 50  # number of (i,j) pairs to sample for each image
+samples_number_of_s_pixel: 50  # number of S to sample
+selected_img_number_pixel: 500
+
+# (i,j) are neighboring patches, both vertical and horizontal distance between them are within 2 units
+stride: 2

@@ -1,0 +1,6 @@
+numpy
+matplotlib
+mmcv>=1.4.7
+timm
+torch>=1.8.0
+torchvision
