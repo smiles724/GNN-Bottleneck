@@ -1,6 +1,6 @@
-# 🔥Representation Bottleneck of Graph Neural Networks (GNNs) 
+# 🔥Representation Bottleneck of Graph Neural Networks (IEEE TKDE) 
 This is the official code for <span style="color:yellow">**Discovering the Representation Bottleneck of Graph Neural Networks from Multi-order Interactions**</span>.
-[[arXiv](https://arxiv.org/abs/2205.07266)].  
+[[IEEE TKDE]([https://arxiv.org/abs/2205.07266](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10640313))] [[arXiv](https://arxiv.org/abs/2205.07266)].  
 Unlike social networks or knowledge graphs, no edges are explicitly defined for molecular 
 graphs in the 3D Euclidean space, and researchers usually employ <span style="color:orange">**KNN-graphs**</span> and 
 <span style="color:orange">**fully-connected graphs**</span> to construction the connectivity between 
@@ -9,7 +9,7 @@ which prevents GNNs from <span style="color:red">**learning interactions of the 
 <p align="center"><img src="graph_construction.jpg" alt="drawing" width="500"/></p>
 
 ## Environment
-Some necessary packages before running the code. 
+Some necessary packages are required before running the code. 
 ```markdown
 pip install torch
 pip install sklearn
@@ -34,7 +34,7 @@ pip install jax[cuda11_cudnn805] -f https://storage.googleapis.com/jax-releases/
 pip install jaxlib
 ```
 Note that `jax.ops.index_update` is deprecated at `jax` 0.2.22, and we modify the profile via `x0.at[].set()`. Moreover, it might
-cause a problem with loading jax due to `Couldn't invoke ptxas`. This is because the path of `ptxas` is not available to the system.
+cause a problem with loading JAX due to `Couldn't invoke ptxas`. This is because the path of `ptxas` is not available to the system.
  A possible solution is to install cuda manually using the `install_cuda_11_1.sh` file.  
 Then run the following `sh` command to produce the raw data.
 ```markdown
@@ -46,19 +46,17 @@ python data/dataset_nbody.py
 ```
 
 ### Molecular Dynamics 
-The MD dataset, ISO 17, is provided by the Quantum Machine organization, which is available in 
+The MD dataset, ISO 17, is provided by the Quantum Machine organization, which is available on 
 [its official website](http://quantum-machine.org/datasets/). After downloading the source data, run the following script to preprocess it.
 ```python
 python data/dataset_iso17.py
 ```
 
 ### Molecular Property Prediction 
-QM7 and QM8 datasets are also accessible in the same [link](http://quantum-machine.org/datasets/) of the Quantum Machine organization as the MD datatset. 
+QM7 and QM8 datasets are also accessible in the same [link](http://quantum-machine.org/datasets/) of the Quantum Machine organization as the MD dataset. 
 ```python
 python data/dataset_qm.py
 ```
-
-
 
 ## Analyze the Bottleneck of GNNs
 ### Train a Model 
@@ -88,31 +86,32 @@ conda create -n bottleneck python=3.8 pytorch=1.12 cudatoolkit=11.3 torchvision 
 conda activate bottleneck
 pip install -r cnn/requirements.txt
 ```
-Then, please download datasets and place them under `./cnn/datasets`. [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) will be automatically 
+Then, please download the datasets and place them under `./cnn/datasets`. [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html) will be automatically 
 downloaded, while [ImageNet](http://www.image-net.org/challenges/LSVRC/2012/) should be downloaded and unziped manually.
 
 ### Calculate the Strength of CNNs
-We only support the evaluation of pre-trained models. Please download released pre-trained models from [timm](https://github.com/rwightman/pytorch-image-models) 
+We only support the evaluation of pre-trained models. Please download the released pre-trained models from [timm](https://github.com/rwightman/pytorch-image-models) 
 and place them in `./cnn/timm_hub`. Then run the following example on ImageNet in `./cnn/interaction_in1k.sh`:
 ```
 cd cnn 
 bash interaction.sh
 ```
-You can uncomment the setting, including the model name and ckeckpoints, that you want to run on top of the script. 
+You can uncomment the setting, including the model name and checkpoints, that you want to run on top of the script. 
 The results will be saved in the `results` directory by default.
 
 
 
 
 ## Cite and Contact
-If you have any questions, please do not hesitate to contact <span style="color:yellow">**[Fang WU](mailto:fw2359@columbia.edu)**</span>.  
+If you have any questions, please do not hesitate to contact <span style="color:yellow">**[Fang WU](mailto:fangwu97@stanford.edu)**</span>.  
 Please consider citing our paper if you find it helpful. Thank you! 😜
 ```markdown
-@article{wu2022discovering,
-  title={Discovering the Representation Bottleneck of Graph Neural Networks from Multi-order Interactions},
-  author={Wu, Fang and Li, Siyuan and Wu, Lirong and Li, Stan Z and Radev, Dragomir and Zhang, Qiang},
-  journal={arXiv preprint arXiv:2205.07266},
-  year={2022}
+@article{wu2024discovering,
+  title={Discovering the Representation Bottleneck of Graph Neural Networks},
+  author={Wu, Fang and Li, Siyuan and Li, Stan Z},
+  journal={IEEE Transactions on Knowledge and Data Engineering},
+  year={2024},
+  publisher={IEEE}
 }
 ```
 
