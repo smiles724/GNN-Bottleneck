@@ -1,6 +1,6 @@
 # 🔥Representation Bottleneck of Graph Neural Networks (IEEE TKDE) 
-This is the official code for <span style="color:yellow">**Discovering the Representation Bottleneck of Graph Neural Networks from Multi-order Interactions**</span>.
-[[IEEE TKDE]([https://arxiv.org/abs/2205.07266](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10640313))] [[arXiv](https://arxiv.org/abs/2205.07266)].  
+This is the official code for <span style="color:yellow">**Discovering the Representation Bottleneck of Graph Neural Networks from Multi-order Interactions**</span>.   
+[[IEEE TKDE](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10640313)] [[arXiv](https://arxiv.org/abs/2205.07266)].  
 Unlike social networks or knowledge graphs, no edges are explicitly defined for molecular 
 graphs in the 3D Euclidean space, and researchers usually employ <span style="color:orange">**KNN-graphs**</span> and 
 <span style="color:orange">**fully-connected graphs**</span> to construction the connectivity between 
